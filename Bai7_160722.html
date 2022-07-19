@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <script>
+    function minNumber(a,b,c) {
+      var min = 0;
+      if (a <= b && a <= c) {
+          min = a;
+      } else if (b >= c) {
+          min = c;
+      } else {
+          min = b;
+      }
+      
+      return min;
+    }
+
+    function display_min() {
+      var num1 = parseFloat(document.getElementById("num1").value);
+      var num2 = parseFloat(document.getElementById("num2").value);
+      var num3 = parseFloat(document.getElementById("num3").value);
+
+      var min = minNumber(num1,num2,num3);
+
+      document.getElementById("result").innerHTML = min;
+    }
+
+  </script>
+
+
+</head>
+<body>
+    Nhập vào 3 số a, b, c
+    <p>Nhập vào số a = <input type="number" id="num1" style="text-align: center; font-size: 16px; font-weight:bold;"></p>
+    <p>Nhập vào số b = <input type="number" id="num2" style="text-align: center; font-size: 16px; font-weight:bold;"></p>
+    <p>Nhập vào số c = <input type="number" id="num3" style="text-align: center; font-size: 16px; font-weight:bold;"></p>
+    <button type="button" onclick="display_min();" value="XemMin">Giá trị Min</button>
+    <p>Số nhỏ nhất là : <span id="result" ></span></p>
+
+</body>
+
+</html>

@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <!-- Bài 3: Viết hàm tính bình phương của một số bất kỳ được đưa vào. Gọi hàm vừa xây dựng được. -->
+  <script>
+    function square_Num(num) {
+      
+      var result = num * num;
+      return result;
+    }
+
+    function display() {
+      var inputnum = document.getElementById("input_num").value;
+
+      document.getElementById("result").innerHTML = square_Num(inputnum);
+    }
+
+  </script>
+
+</head>
+<body>
+  
+  Bình Phương của số: <input type="number" oninput="display();" onchange="display();"
+                              id="input_num" style="text-align: center;font-size:16px;font-weight:bold;"> 
+                              là: <span id="result" style="color:red;font-size:16px;font-weight:bold;"></span>
+</body>
+
+</html>

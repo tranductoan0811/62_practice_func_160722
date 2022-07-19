@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+  <head>
+      <script>
+    
+        function sum(a,b) {
+          if (a > b) {
+
+            return "Số thứ nhất phải nhỏ hơn số thứ hai. Bạn nhập lại nhé";
+
+          } else {
+
+            return "Tổng hai số là: " + (a+b);
+          }
+
+        }
+      </script>
+  </head>
+  <!-- Bài 1: Tạo hàm nhận vào hai tham số. Nếu giá trị của tham số thứ nhất lớn hơn tham số thứ hai, hiển thị hộp thoại thông báo cho người dùng. Nếu giá trị của tham số thứ nhất nhỏ hơn hoặc bằng tham số thứ hai, trả về tổng của hai tham số. -->
+  <body>
+    <form style="width: 450px;">
+      <fieldset>
+        <legend>Thực hành tính tổng hai số bằng function</legend>
+    <label >Nhập số thứ nhất: </label>
+    <input type="number" id="number1" placeholder="Nhập số thứ nhất: " style="text-align: center;font-size: 16px; margin-left: 10px;"><br><br>
+
+    <label >Nhập số thứ hai: </label>
+    <input type="number" id="number2" placeholder="Nhập số thứ hai: " style="text-align: center;font-size: 16px;margin-left: 18px;"><br><br>
+
+    <button type="button" onclick="tinhtong();">Tính tổng</button>
+
+    <p>Kết quả: <span id="result"></span></p>
+      </fieldset>
+    </form>
+
+    <script>
+      function tinhtong() {
+      let num1 = parseFloat(document.getElementById("number1").value);
+      let num2 = parseFloat(document.getElementById("number2").value);
+      
+      let tong = sum(num1,num2);
+
+      document.getElementById("result").innerHTML = tong;
+      }
+    </script>
+    
+  </body>
+</html>

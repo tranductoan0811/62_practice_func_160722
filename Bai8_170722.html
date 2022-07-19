@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <!-- Viết hàm nhận vào một số, kiểm tra xem nếu số đưa vào có phải là nguyên dương không. Nếu là nguyên dương trả về true, ngược lại trả về false -->
+    <!-- hàm kiểm tra số nguyên: isInterger -->
+    <h3>Hàm nhận vào một số là số nguyên dương hay không</h3>
+   <script>
+    function checkInterget_num() {
+      var text;
+      var num = +document.getElementById("input_num").value;
+
+      if (Number.isInteger(num)) {
+          if (num > 0) {
+            text = true + " , số nhập vào là số nguyên dương.";
+          } else {
+            text = false + " , số nhập vào không là số nguyên dương." 
+          }
+      } else {
+            text = false + " , số nhập vào không là số nguyên dương.";   
+      }
+      
+      document.getElementById("result").innerHTML = text;
+     
+    }
+
+  </script>
+  
+  </head>
+  <body>
+    <p>Nhập số cần kiểm tra: <input type="number" id="input_num" onclick="checkInterget_num();" onchange="checkInterget_num();" style="text-align: center;"></p>
+    <p>Kết quả: <span id="result"></span></p>
+    
+  </body>
+</html>

@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <script>
+    function checkIsnumber(num) {
+
+      if (isNaN(num)) {
+          
+        document.getElementById("result").innerHTML = false + " , số nhập vào không phải là ký tự số bạn nhé.";
+      } else {
+
+        document.getElementById("result").innerHTML = true + " , số nhập vào là ký tự số.";
+      }
+
+    }
+
+  </script>
+</head>
+<body>
+  Nhập số cần kiểm tra: <input type="text" id="input_num" oninput="checkIsnumber(this.value);" onchange="checkIsnumber(this.value)" style="text-align: center; font-size: 16px; font-weight: bold;">
+  <p>Kết quả: <span id="result"></span></p>
+
+
+</body>
+
+
+</html>

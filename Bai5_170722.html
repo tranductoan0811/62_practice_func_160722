@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <!-- tính giai thừa 
+    factorial of a number là tích của số nguyên đó và tất cả các số nguyên dương nhỏ hơn hoặc bằng nó. Nó phải là một số nguyên dương – nếu không, logic mở rộng đến âm vô cùng. Nói cách khác – tính giai thừa có nghĩa là nhân tất cả các số nguyên giữa một số và 1 -->
+    <h3>Tính giai thừa của một số</h3>
+    <script>
+      function cal_Factorialnum(num) {
+        var mul = 1;
+        if (num <= 0) {
+            mul = "invalid input. Number must be greater than 0.";
+        } else {
+            for (let i = 1; i <= num; i++) {
+                    mul = mul*i;
+            } 
+          
+          }
+        return mul; // biến của JS là biến động, có thể chứa nhiều kiểu dữ liệu: string, number, boolean
+      }
+
+      function display() {
+
+        var number = parseInt(document.getElementById("input_num").value);
+        
+        document.getElementById("result").innerHTML = cal_Factorialnum(number);
+      }
+      
+    </script>
+
+  </head>
+  <body>
+    <p>Nhập số nguyên dương ( > 0 ) <input type="number" id="input_num" onclick="display();" onchange="display();" style="text-align: center; font-size: 16px; font-weight:bold; color: red;"></p>
+    <p>Kết quả giai thừa của số nhập vào: <span id="result" style="color: blue; font-size: 16px; font-weight:bold;"></span></p>
+    
+
+  </body>
+</html>

@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <h3 style="margin-left: 150px;">Thực hành về hàm</h3>
+  <!-- Bài 10: Viết hàm truyền vào một mảng ký tự, và một ký tự bất kỳ, kiểm tra xem ký tự bất kỳ đó có nằm trong mảng không. Nếu có trả về số lần xuất hiện của ký tự đó, nếu không trả về -1.  -->
+  <script>
+    
+    function check_char_in_arr(str,char) {
+      var mess;
+
+      for (let i = 0; i < str.length; i++) {
+        if (str.indexOf(char) == -1) {
+          mess = -1 + ' ( ký tự nhập vào không có trong mảng ).';
+        } else if (str.indexOf(char) !== -1) {
+          if (char === str[i]) {
+            mess++;
+          }
+        }
+      }
+    return mess;
+    }
+
+    // tạo hàm hiển thị mảng 1 chiều
+    // function display_arr1D(arr) {
+    //   var arr = [];
+    //   for (let i =0; i<= arr.length-1; i++) {
+    //     if (i == arr.length-1) {
+    //       arr.push(arr[i]);
+    //     } else {
+    //       arr.push(arr[i] + ", ");
+    //     }
+    // }
+    //   return arr;
+    // }
+
+    function display() {
+      let input_str = document.getElementById("input_str").value;;
+      let input_char = document.getElementById("input_ele").value;
+
+      document.getElementById("out_str").innerHTML = input_str;
+      document.getElementById("occurence_count").innerHTML = check_char_in_arr(input_str,input_char);
+      
+    }
+
+  </script>
+
+</head>
+<body>
+  <form style="width: 500px;">
+  <fieldset>
+    <legend>Kiểm tra ký tự nhập vào có nằm trong mảng khai báo</legend>
+  <p>Nhập vào một mảng ký tự bất kỳ  <input type="text" id="input_str" style="margin-left: 10px;height: 25px;text-align: left;font-size:16px;width: 200px;"></p>
+  <p>Nhập vào một ký tự bất kỳ  <input type="text" id="input_ele" style="margin-left: 48px;height: 25px;text-align: center; font-size:18px;width: 100px;"></p>
+  <button type="button" onclick="display();" style="height: 25px;font-size:16px;font-weight:bold;color:red;">In thông tin</button><br>
+ 
+  <p>Mảng ký tự nhập vào : <span id="out_str"></span></p>
+  
+  <p >Số lần xuất hiện trong mảng của ký tự nhập vào: <span id="occurence_count"></span></p>
+  </fieldset>
+</form>
+
+</body>
+
+</html>

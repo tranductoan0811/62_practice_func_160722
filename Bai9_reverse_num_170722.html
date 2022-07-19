@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <!-- Phương thức Math.floor() sẽ làm tròn dưới số được cung cấp khi gọi phương thức. 
+  Phương thức sẽ trả về số nguyên gần nhất nhỏ hơn số truyền vào. -->
+  <script>
+    function reverse_Num(num) {
+      var new_num = '';
+      //debugger;
+      for (let i = 1;;i++) {
+        new_num += (num % 10);
+        num = Math.floor(num / 10);
+        if (num == 0) {
+          break;
+        }
+      }
+      return new_num;
+    }
+ 
+    function display() {
+      var number = document.getElementById("input_num").value;
+
+      document.getElementById("display_input_num").innerHTML = number;
+      document.getElementById("result").innerHTML = reverse_Num(number);
+
+    }
+
+    function clearAll_info() {
+      document.getElementById("input_num").value = '';
+      document.getElementById("display_input_num").innerHTML = '';
+      document.getElementById("result").innerHTML = '';
+    }
+
+</script>
+
+</head>
+<body>
+<form style="width:400px;">
+  <fieldset>
+    <legend>Form đảo ngược số</legend>
+  <p>Nhập vào 1 số <input type="number" id="input_num" style="text-align: center; font-size:16px; font-weight:bold;color: red;"></p>
+  <button type="button" onclick="display();">In kết quả</button>
+  <button type="button" onclick="clearAll_info();">Reset All</button>
+  <p>Số nhập vào là: <span id="display_input_num" style="font-size:16px; font-weight:bold;color: red;"></span></p>
+  <p>Số đảo ngược là: <span id="result" style="font-size:16px; font-weight:bold;color: blue;"></span></p>
+  </fieldset>
+</form>
+</body>
+
+</html>

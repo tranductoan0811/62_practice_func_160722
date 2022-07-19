@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <!-- tạo một hàm nhận vào một tham số dạng chuỗi duy nhất. 
+      Trong hàm này, duyệt qua mảng thứ nhất để tìm tên ngôi sao. 
+      Nếu tìm thấy, trả lại giá trị tương ứng với chỉ số đó ở mảng thứ hai. 
+      Nói cách khác, trả lại tên chòm sao của ngôi sao đó. 
+      Trong phần <body> của trang web, dùng hộp thoại prompt để người dùng nhập vào tên của ngôi sao, 
+      sau đó gọi hàm với thông tin đầu vào. 
+      Đừng quên xử lý trong trường hợp không tìm thấy ngôi sao nào -->
+      <h3>Nhập vào tên của ngôi sao, trả về chòm sao tương ứng</h3>
+
+      <script>
+      
+      function display_arr1D(arr) {
+        for (let i =0; i< arr.length; i++) {
+            if (i == arr.length-1) {
+              document.write(arr[i]);
+            } else {
+              document.write(arr[i] + ", ");
+            }
+                   
+        }
+      }
+
+      </script>
+  </head>
+  <body>
+    <!-- hai mảng riêng biệt, không ghép thành mảng 2 chiều -->
+    
+    <script>
+      
+      var arr1 = ['Polaris', 'Aldebaran', 'Deneb', 'Vega', 'Altair', 'Dubhe', 'Regulus']; // tên các ngôi sao
+      var arr2 = ['Ursa Minor', 'Tarurus' , 'Cygnus', 'Lyra', 'Aquila', 'Ursa Major', 'Leo']; // tên các chòm sao tương ứng chứa các ngôi sao
+      
+      document.write("<br>" + "Tên các ngôi sao : "); display_arr1D(arr1);document.write("<br>")
+      document.write("<br>" + "Tên các chòm sao tương ứng : "); display_arr1D(arr2);document.write("<br>" + "<br>")
+      
+
+    </script>
+    
+      <button type="button" onclick="searStar();">Nhập ngôi sao của bạn</button>
+      <p>Ngôi sao của bạn: <span id="idstar" style="color: red;"></span></p>
+      <p>Thuộc chòm sao: <span id="result"></span></p>
+    <script>
+      function searStar() {
+      var star = prompt("Nhập vào tên ngôi sao của bạn: ");
+      
+      var mess;
+      for (let i = 0; i < arr1.length; i++) {
+          if (arr1.indexOf(star) == -1) {
+            mess = " không có trong danh sách";
+            
+          } else if (arr1.indexOf(star) !== -1) {
+                    for (let j=0; j < arr2.length; j++) {
+                      mess = arr2[arr1.indexOf(star)];
+              
+                    }
+                  }
+      }
+
+      document.getElementById("result").innerHTML = mess;
+      document.getElementById("idstar").innerHTML = star;
+
+      }
+    </script>
+
+  </body>
+</html>

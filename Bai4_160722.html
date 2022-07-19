@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <script>
+      function calCircle(r) {
+          var area = (r*r)*Math.PI; // tính diện tích
+          var perimeter = 2 * r * Math.PI; // tính chu vi
+          return [area, perimeter];
+
+      }
+
+      function display() {
+          var radius = document.getElementById("input_radius").value;
+          var [dtich, chuvi] = calCircle(radius);
+
+          document.getElementById("result_are").innerHTML = dtich.toFixed(2);
+          document.getElementById("result_premeter").innerHTML = chuvi.toFixed(2);
+
+      }
+
+    </script>
+    <h3>Tính chu vi và diện tích hình tròn</h3>
+  </head>
+  <body>
+    <!-- tính chu vi và diện tích hình tròn -->
+    <label >Nhập bán kính đường tròn ( m )</label>
+    <input type="number" id="input_radius" onclick="display();" onchange="display();" style="text-align: center;font-size: 16px;font-weight: bold;"><br>
+    
+    <p >Diện tích hình tròn = <span id="result_are"></span> ( m2 ) </p>
+    <p >Chu vi hình tròn = <span id="result_premeter"></span> ( m ) </p>
+
+  </body>
+
+</html>
